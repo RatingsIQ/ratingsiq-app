@@ -18,24 +18,28 @@ export default function LandingPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 overflow-hidden bg-linear-to-b from-slate-50 to-white">
-        <div className="max-w-5xl mx-auto text-center">
+      <section className="relative overflow-hidden bg-gradient-to-b from-slate-900 to-slate-100 py-20 px-4 sm:py-32">
+        <div className="absolute inset-0 bg-gradient-to-br from-amber-900/10 to-transparent" />{" "}
+        {/* subtle warm overlay */}
+        <div className="relative max-w-5xl mx-auto text-center">
           {/* Logo */}
           <div className="flex justify-center mb-10">
             <Image
               src="/logo.svg"
               alt="RatingsIQ Logo"
-              width={500} // Approximate original width — SVG scales perfectly
-              height={125} // Maintain aspect ratio (adjust if needed)
-              className="w-full max-w-md mx-auto" // Responsive: full width on mobile, max ~448px on desktop
-              priority // Loads fast since it's above the fold
+              width={500}
+              height={125}
+              className="w-full max-w-md mx-auto"
+              priority
             />
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-            Collect Honest Feedback. Share Only What Helps.
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Collect Honest Feedback.
+            <br className="hidden sm:block" />
+            Share Only What Helps.
           </h1>
-          <p className="text-xl text-slate-600 mb-10 max-w-4xl mx-auto">
+          <p className="text-xl text-slate-100 mb-10 max-w-4xl mx-auto">
             Gather neutral, third-party customer feedback without risking your
             public reputation. RatingsIQ helps businesses spot trends, publish
             testimonials, and act on insights — all on your terms.
@@ -43,18 +47,10 @@ export default function LandingPage() {
 
           <Button
             size="lg"
-            className="bg-amber-400 hover:bg-amber-500 text-black font-semibold text-lg px-10 py-7"
+            className="bg-amber-500 hover:bg-amber-600 text-white font-semibold text-lg px-10 py-7"
           >
-            <Mail className="mr-2 h-5 w-5" />
             Create Your First Review Link
           </Button>
-
-          {/* Visual Suggestion Placeholder */}
-          <div className="mt-16 max-w-4xl mx-auto">
-            <div className="bg-slate-200 border-2 border-dashed rounded-xl w-full h-96 flex items-center justify-center text-slate-500">
-              Dashboard Screenshot / Illustration Here
-            </div>
-          </div>
         </div>
       </section>
 
@@ -74,7 +70,7 @@ export default function LandingPage() {
               <Card key={item} className="p-6">
                 <Users className="w-10 h-10 text-amber-400 mx-auto mb-4" />
                 <h3 className="font-semibold text-lg mb-2">{item}</h3>
-                <p className="text-slate-600 text-sm">
+                <p className="text-slate-800 text-sm">
                   {item === "Local Businesses" &&
                     "Protect your reputation and collect honest feedback."}
                   {item === "SaaS Founders" &&
@@ -112,7 +108,7 @@ export default function LandingPage() {
               <h3 className="text-xl font-semibold mb-3">
                 Private Feedback Is Messy
               </h3>
-              <p className="text-slate-600">
+              <p className="text-slate-800">
                 Emails, DMs, spreadsheets — all over the place.
               </p>
             </Card>
@@ -121,7 +117,7 @@ export default function LandingPage() {
               <h3 className="text-xl font-semibold mb-3">
                 Testimonials Are Hard to Collect
               </h3>
-              <ul className="text-slate-600 text-left space-y-2">
+              <ul className="text-slate-800 text-left space-y-2">
                 <li>• Customers don’t know what to write.</li>
                 <li>• Businesses chase reviews inconsistently.</li>
               </ul>
@@ -166,7 +162,7 @@ export default function LandingPage() {
               <Card key={step.title} className="p-6">
                 <step.icon className="w-12 h-12 text-amber-400 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
-                <p className="text-slate-600">{step.desc}</p>
+                <p className="text-slate-800">{step.desc}</p>
               </Card>
             ))}
           </div>
