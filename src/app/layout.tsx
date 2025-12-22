@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Figtree } from "next/font/google";
+import { Asap } from "next/font/google";
 import "./globals.css";
 
-const figtree = Figtree({
+const asap = Asap({
   subsets: ["latin"],
-  variable: "--font-figtree",
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-asap",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +26,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className={`${figtree.variable} font-sans antialiased`}>
+      <body className={`${asap.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>

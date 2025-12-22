@@ -18,8 +18,8 @@ export default function LandingPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-slate-900 to-slate-100 py-20 px-4 sm:py-32">
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-900/10 to-transparent" />{" "}
+      <section className="relative overflow-hidden bg-linear-to-b from-slate-900 to-slate-100 py-20 px-4 sm:py-32">
+        <div className="absolute inset-0 bg-linear-to-br from-amber-900/10 to-transparent" />{" "}
         {/* subtle warm overlay */}
         <div className="relative max-w-5xl mx-auto text-center">
           {/* Logo */}
