@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Asap } from "next/font/google";
+import { Source_Sans_3 } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/navbar";
 
-const asap = Asap({
+const sourceSans = Source_Sans_3({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-asap",
+  variable: "--font-source-sans",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +27,8 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className={`${asap.variable} font-sans antialiased`}>
+      <body className={`${sourceSans.variable} font-sans antialiased`}>
+        <Navbar />
         {children}
       </body>
     </html>

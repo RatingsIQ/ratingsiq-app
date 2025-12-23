@@ -18,22 +18,10 @@ export default function LandingPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-linear-to-b from-slate-900 to-slate-100 py-20 px-4 sm:py-32">
+      <section className="relative overflow-hidden bg-linear-to-b from-gray-950 to-gray-50 py-20 px-4 sm:py-32">
         <div className="absolute inset-0 bg-linear-to-br from-amber-900/10 to-transparent" />{" "}
         {/* subtle warm overlay */}
         <div className="relative max-w-5xl mx-auto text-center">
-          {/* Logo */}
-          <div className="flex justify-center mb-10">
-            <Image
-              src="/logo.svg"
-              alt="RatingsIQ Logo"
-              width={500}
-              height={125}
-              className="w-full max-w-md mx-auto"
-              priority
-            />
-          </div>
-
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             Collect Honest Feedback.
             <br className="hidden sm:block" />
