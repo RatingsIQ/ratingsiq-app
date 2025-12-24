@@ -1,7 +1,8 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import {
   Star,
   Shield,
@@ -9,30 +10,24 @@ import {
   Users,
   CheckCircle,
   TrendingUp,
-  Mail,
   ArrowRight,
 } from "lucide-react";
-import Image from "next/image";
 
 export default function LandingPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-linear-to-b from-gray-950 to-gray-50 py-20 px-4 sm:py-32">
-        <div className="absolute inset-0 bg-linear-to-br from-amber-900/10 to-transparent" />{" "}
-        {/* subtle warm overlay */}
+      <section className="relative overflow-hidden bg-linear-to-b from-neutral-950 to-neutral-50 py-20 px-4 sm:py-32">
         <div className="relative max-w-5xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             Collect Honest Feedback.
             <br className="hidden sm:block" />
-            Share Only What Helps.
+            Share Only What Matters.
           </h1>
           <p className="text-xl text-slate-100 mb-10 max-w-4xl mx-auto">
-            Gather neutral, third-party customer feedback without risking your
-            public reputation. RatingsIQ helps businesses spot trends, publish
-            testimonials, and act on insights — all on your terms.
+            Gather neutral, third-party feedback without risking your public
+            reputation.
           </p>
-
           <Button
             size="lg"
             className="bg-amber-500 hover:bg-amber-600 text-white font-semibold text-lg px-10 py-7"
@@ -46,9 +41,9 @@ export default function LandingPage() {
       <section className="py-20 px-4 bg-slate-50">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-12">
-            Designed for Businesses That Value Insight
+            Built for Businesses That Value Insight Over Guesswork
           </h2>
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
               "Local Businesses",
               "SaaS Founders",
@@ -60,13 +55,13 @@ export default function LandingPage() {
                 <h3 className="font-semibold text-lg mb-2">{item}</h3>
                 <p className="text-slate-800 text-sm">
                   {item === "Local Businesses" &&
-                    "Protect your reputation and collect honest feedback."}
+                    "Avoid one bad moment defining your business."}
                   {item === "SaaS Founders" &&
-                    "Turn ratings into actionable intelligence."}
+                    "Understand churn before it happens."}
                   {item === "Agencies" &&
-                    "Manage client reputation efficiently."}
+                    "Collect client feedback without brand risk."}
                   {item === "Service Professionals" &&
-                    "Gain insights without public risk."}
+                    "Get honest feedback without awkward conversations."}
                 </p>
               </Card>
             ))}
@@ -78,42 +73,44 @@ export default function LandingPage() {
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-12">
-            Stop Losing Control of Your Customer Feedback
+            Public Reviews Take Control Out of Your Hands
           </h2>
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-3 mb-8">
             <Card className="p-8">
               <Shield className="w-12 h-12 text-amber-400 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-3">
                 Public Reviews Are Risky
               </h3>
               <ul className="text-slate-600 text-left space-y-2">
-                <li>• One bad review can live forever.</li>
-                <li>• Platforms control context and relationships.</li>
+                <li>• One moment becomes permanent</li>
+                <li>• Context and fairness disappear</li>
+                <li>• Platforms decide visibility</li>
               </ul>
             </Card>
             <Card className="p-8">
               <BarChart3 className="w-12 h-12 text-amber-400 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-3">
-                Private Feedback Is Messy
+                Private Feedback Is Fragmented
               </h3>
               <p className="text-slate-800">
-                Emails, DMs, spreadsheets — all over the place.
+                Emails, surveys, and spreadsheets create noise, not clarity.
               </p>
             </Card>
             <Card className="p-8">
               <TrendingUp className="w-12 h-12 text-amber-400 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-3">
-                Testimonials Are Hard to Collect
+                Testimonials Are Hard to Capture
               </h3>
               <ul className="text-slate-800 text-left space-y-2">
                 <li>• Customers don’t know what to write.</li>
-                <li>• Businesses chase reviews inconsistently.</li>
+                <li>• Businesses ask inconsistently</li>
+                <li>• Good feedback gets lost</li>
               </ul>
             </Card>
           </div>
           <p className="text-lg text-slate-600">
-            RatingsIQ sits between all of this — neutral, structured, and
-            actionable feedback.
+            RatingsIQ gives you structure, context, and control without any
+            public pressure.
           </p>
         </div>
       </section>
@@ -122,29 +119,29 @@ export default function LandingPage() {
       <section className="py-20 px-4 bg-slate-50">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-12">
-            Turn Feedback into Business Intelligence
+            Turn Feedback Into Clarity
           </h2>
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 icon: Shield,
-                title: "Neutral Review Collection",
-                desc: "Customers speak freely in a trusted, third-party environment.",
+                title: "Customers Speak Honestly",
+                desc: "Feedback is collected in a neutral, third-party environment.",
               },
               {
                 icon: BarChart3,
-                title: "Private Dashboard",
-                desc: "View every rating and comment in one place.",
+                title: "Private Visibility",
+                desc: "View every rating and comment in one organized dashboard.",
               },
               {
                 icon: ArrowRight,
-                title: "Smart Exporting",
-                desc: "Download testimonials for your website, ads, or social media.",
+                title: "Selective Sharing",
+                desc: "Choose what testimonials get shared, and where.",
               },
               {
                 icon: TrendingUp,
-                title: "Insight Over Time",
-                desc: "Spot trends before they turn into public problems.",
+                title: "Spot Issues Early",
+                desc: "Identify patterns before they become public problems.",
               },
             ].map((step) => (
               <Card key={step.title} className="p-6">
@@ -157,10 +154,28 @@ export default function LandingPage() {
 
           {/* Flow Illustration Placeholder */}
           <div className="mt-16 max-w-4xl mx-auto">
-            <div className="bg-slate-200 border-2 border-dashed rounded-xl w-full h-64 flex items-center justify-center text-slate-500">
+            <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64 flex items-center justify-center text-slate-500">
               Flow Illustration: Customer → Dashboard → Export → Insights
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* What This Is Not */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-8">
+            What RatingsIQ Is Not
+          </h2>
+          <ul className="mt-4 text-lg text-slate-600 space-y-2 text-left md:inline-block">
+            <li>• Not a public review platform</li>
+            <li>• Not review gating</li>
+            <li>• Not SEO tricks or ratings manipulation</li>
+            <li>• Not designed to pressure customers</li>
+          </ul>
+          <p className="mt-12 text-xl text-slate-900">
+            Insight comes first. Visibility comes second.
+          </p>
         </div>
       </section>
 
@@ -171,11 +186,12 @@ export default function LandingPage() {
             We Respect Honesty and Transparency
           </h2>
           <p className="text-lg text-slate-600 mb-10">
-            RatingsIQ is designed for internal insight and voluntary publishing
-            — not public review manipulation. Businesses curate what gets
-            published, customers leave honest feedback, and everyone benefits.
+            RatingsIQ is built for internal understanding and voluntary
+            publishing. We don’t post reviews publicly, influence ratings, or
+            pressure customers. Businesses decide what gets shared. Customers
+            decide what they say - always.
           </p>
-          <div className="flex justify-center gap-8">
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Badge variant="secondary" className="text-lg py-3 px-6">
               Neutral, Third-Party Feedback
             </Badge>
@@ -190,9 +206,13 @@ export default function LandingPage() {
       <section className="py-20 px-4 bg-slate-50">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-12">
-            Stellar Voices
+            Stellar Voices - Real Feedback, Shared Intentionally
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <p className="text-lg text-slate-600 mb-10">
+            Examples of how businesses choose to showcase feedback collected
+            through RatingsIQ.
+          </p>
+          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
             {[
               {
                 quote:
@@ -231,13 +251,12 @@ export default function LandingPage() {
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-8">
-            Pricing That Reflects the Value of Insight
+            Pricing That Reflects the Value of Clarity
           </h2>
           <p className="text-xl text-slate-600 mb-12">
-            You’re not buying software. You’re reducing risk, gaining clarity,
-            and turning feedback into actionable intelligence.
+            You’re not buying software, you’re reducing reputational risk.
           </p>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 justify-center">
             <Card className="p-8 border-2 border-amber-400">
               <h3 className="text-2xl font-bold mb-4">Starter</h3>
               <p className="text-4xl font-bold mb-6">
@@ -262,7 +281,7 @@ export default function LandingPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 px-4 bg-slate-900 text-white">
+      <section className="py-20 px-4 bg-neutral-800 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">
             See What Your Customers Really Think
@@ -273,10 +292,8 @@ export default function LandingPage() {
           >
             Create Your First Review Link
           </Button>
-
-          {/* Illustration Placeholder */}
           <div className="mt-16 max-w-md mx-auto">
-            <div className="bg-slate-700 border-2 border-dashed rounded-xl w-full h-64 flex items-center justify-center text-slate-400">
+            <div className="bg-gray-600 border-2 border-dashed rounded-xl w-full h-64 flex items-center justify-center text-slate-200">
               Stars → Insights Illustration
             </div>
           </div>

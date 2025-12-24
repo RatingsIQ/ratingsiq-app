@@ -1,47 +1,94 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Image from "next/image";
 import Link from "next/link";
+import { Menu } from "lucide-react";
 
 export default function Navbar() {
+  const navItems = [
+    { label: "Features", href: "#features" },
+    { label: "Pricing", href: "#pricing" },
+    { label: "Stellar Voices", href: "#stellar-voices" },
+  ];
+
   return (
-    <nav className="relative z-20 bg-gray-950">
-      {/* Warm overlay to blend with hero */}
-      <div className="absolute inset-0 bg-linear-to-br from-amber-900/10 to-transparent pointer-events-none" />
+    <nav className="relative z-50 w-full bg-neutral-950">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/logo-dark.svg" // Use your dark/transparent logo version
+              alt="RatingsIQ Logo"
+              width={180}
+              height={45}
+              className="h-10 w-auto"
+              priority
+            />
+          </Link>
 
-      <div className="relative max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2">
-          <Image
-            src="/logo-dark.svg"
-            alt="RatingsIQ Logo"
-            width={150}
-            height={50}
-          />
-        </Link>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="text-slate-300 hover:text-white font-medium transition-colors"
+              >
+                {item.label}
+              </Link>
+            ))}
+            <Button
+              variant="ghost"
+              asChild
+              className="text-slate-300 hover:text-white"
+            >
+              <Link href="/login">Log In</Link>
+            </Button>
+            <Button
+              className="bg-amber-500 hover:bg-amber-600 text-black font-semibold"
+              asChild
+            >
+              <Link href="/login">Get Started</Link>
+            </Button>
+          </div>
 
-        {/* Nav links */}
-        <div className="hidden md:flex items-center space-x-6 text-white font-semibold">
-          <Link
-            href="/features"
-            className="hover:text-amber-400 transition-colors"
-          >
-            Features
-          </Link>
-          <Link
-            href="/pricing"
-            className="hover:text-amber-400 transition-colors"
-          >
-            Pricing
-          </Link>
-          <Link
-            href="/login"
-            className="hover:text-amber-400 transition-colors"
-          >
-            Login
-          </Link>
-          <Button className="bg-amber-400 hover:bg-amber-500 text-black px-6 py-2 font-semibold">
-            Sign Up
-          </Button>
+          {/* Mobile Hamburger Menu */}
+          <Sheet>
+            <SheetTrigger asChild className="md:hidden">
+              <Button variant="ghost" size="icon" className="text-white">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Open menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-80">
+              {/* Accessible hidden title for screen readers */}
+              <h2 className="sr-only">Navigation Menu</h2>
+
+              <div className="flex flex-col space-y-6 mt-8">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className="text-lg font-medium text-slate-700 hover:text-amber-500 transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+                <Button variant="ghost" asChild className="w-full">
+                  <Link href="/login">Log In</Link>
+                </Button>
+                <Button
+                  className="w-full bg-amber-500 hover:bg-amber-600 text-black font-semibold"
+                  asChild
+                >
+                  <Link href="/login">Get Started</Link>
+                </Button>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </nav>
