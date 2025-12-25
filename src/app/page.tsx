@@ -6,18 +6,29 @@ import { Badge } from "@/components/ui/badge";
 import {
   Star,
   Shield,
+  ShieldAlert,
   BarChart3,
   Users,
   CheckCircle,
   TrendingUp,
   ArrowRight,
+  MessagesSquare,
+  FileX,
+  Speech,
+  MessageCircleHeart,
+  FilePen,
+  LayoutDashboard,
+  MessageSquareText,
+  Share2,
+  BrickWallShield,
+  Radar,
 } from "lucide-react";
 
 export default function LandingPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-linear-to-b from-neutral-950 to-neutral-50 py-20 px-4 sm:py-32">
+      <section className="relative overflow-hidden bg-linear-to-b from-gray-950 to-gray-100 py-20 px-4 sm:py-32">
         <div className="relative max-w-5xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             Collect Honest Feedback.
@@ -30,7 +41,7 @@ export default function LandingPage() {
           </p>
           <Button
             size="lg"
-            className="bg-amber-500 hover:bg-amber-600 text-white font-semibold text-lg px-10 py-7"
+            className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold text-lg px-10 py-7"
           >
             Create Your First Review Link
           </Button>
@@ -38,7 +49,7 @@ export default function LandingPage() {
       </section>
 
       {/* Who It’s For */}
-      <section className="py-20 px-4 bg-slate-50">
+      <section className="py-20 px-4 bg-linear-to-b from-gray-100 to-gray-50">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-12">
             Built for Businesses That Value Insight Over Guesswork
@@ -51,7 +62,7 @@ export default function LandingPage() {
               "Service Professionals",
             ].map((item) => (
               <Card key={item} className="p-6">
-                <Users className="w-10 h-10 text-amber-400 mx-auto mb-4" />
+                <Users className="w-10 h-10 text-teal-600 mx-auto mb-4" />
                 <h3 className="font-semibold text-lg mb-2">{item}</h3>
                 <p className="text-slate-800 text-sm">
                   {item === "Local Businesses" &&
@@ -77,7 +88,7 @@ export default function LandingPage() {
           </h2>
           <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-3 mb-8">
             <Card className="p-8">
-              <Shield className="w-12 h-12 text-amber-400 mx-auto mb-4" />
+              <ShieldAlert className="w-12 h-12 text-teal-600 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-3">
                 Public Reviews Are Risky
               </h3>
@@ -88,7 +99,7 @@ export default function LandingPage() {
               </ul>
             </Card>
             <Card className="p-8">
-              <BarChart3 className="w-12 h-12 text-amber-400 mx-auto mb-4" />
+              <MessagesSquare className="w-12 h-12 text-teal-600 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-3">
                 Private Feedback Is Fragmented
               </h3>
@@ -97,7 +108,7 @@ export default function LandingPage() {
               </p>
             </Card>
             <Card className="p-8">
-              <TrendingUp className="w-12 h-12 text-amber-400 mx-auto mb-4" />
+              <FileX className="w-12 h-12 text-teal-600 mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-3">
                 Testimonials Are Hard to Capture
               </h3>
@@ -124,28 +135,28 @@ export default function LandingPage() {
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
-                icon: Shield,
+                icon: MessageSquareText,
                 title: "Customers Speak Honestly",
                 desc: "Feedback is collected in a neutral, third-party environment.",
               },
               {
-                icon: BarChart3,
+                icon: BrickWallShield,
                 title: "Private Visibility",
-                desc: "View every rating and comment in one organized dashboard.",
+                desc: "View every rating and comment in a secure and organized dashboard.",
               },
               {
-                icon: ArrowRight,
+                icon: Share2,
                 title: "Selective Sharing",
                 desc: "Choose what testimonials get shared, and where.",
               },
               {
-                icon: TrendingUp,
+                icon: Radar,
                 title: "Spot Issues Early",
                 desc: "Identify patterns before they become public problems.",
               },
             ].map((step) => (
               <Card key={step.title} className="p-6">
-                <step.icon className="w-12 h-12 text-amber-400 mx-auto mb-4" />
+                <step.icon className="w-12 h-12 text-teal-600 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
                 <p className="text-slate-800">{step.desc}</p>
               </Card>
@@ -180,7 +191,7 @@ export default function LandingPage() {
       </section>
 
       {/* Trust & Ethics */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-slate-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-8">
             We Respect Honesty and Transparency
@@ -192,10 +203,16 @@ export default function LandingPage() {
             decide what they say - always.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Badge variant="secondary" className="text-lg py-3 px-6">
+            <Badge
+              variant="secondary"
+              className="text-lg py-3 px-6 border-slate-200 bg-white shadow-sm"
+            >
               Neutral, Third-Party Feedback
             </Badge>
-            <Badge variant="secondary" className="text-lg py-3 px-6">
+            <Badge
+              variant="secondary"
+              className="text-lg py-3 px-6 border-slate-200 bg-white shadow-sm"
+            >
               GDPR / Privacy Safe
             </Badge>
           </div>
@@ -203,7 +220,7 @@ export default function LandingPage() {
       </section>
 
       {/* Stellar Voices (Social Proof) */}
-      <section className="py-20 px-4 bg-slate-50">
+      <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-12">
             Stellar Voices - Real Feedback, Shared Intentionally
@@ -235,7 +252,7 @@ export default function LandingPage() {
                   {[...Array(5)].map((_, i) => (
                     <Star
                       key={i}
-                      className="w-6 h-6 fill-amber-400 text-amber-400"
+                      className="w-6 h-6 fill-yellow-400 text-yellow-400"
                     />
                   ))}
                 </div>
@@ -248,7 +265,7 @@ export default function LandingPage() {
       </section>
 
       {/* Pricing */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-slate-50">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-8">
             Pricing That Reflects the Value of Clarity
@@ -257,21 +274,22 @@ export default function LandingPage() {
             You’re not buying software, you’re reducing reputational risk.
           </p>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 justify-center">
-            <Card className="p-8 border-2 border-amber-400">
+            <Card className="p-8 border-2 border-yellow-400 shadow-sm">
               <h3 className="text-2xl font-bold mb-4">Starter</h3>
               <p className="text-4xl font-bold mb-6">
                 $15<span className="text-lg font-normal">/month</span>
               </p>
               <ul className="text-left space-y-3 mb-8">
                 <li className="flex items-center">
-                  <CheckCircle className="mr-2 text-amber-400" /> Single project
+                  <CheckCircle className="mr-2 text-yellow-400" /> Single
+                  project
                 </li>
                 <li className="flex items-center">
-                  <CheckCircle className="mr-2 text-amber-400" /> Basic
+                  <CheckCircle className="mr-2 text-yellow-400" /> Basic
                   dashboard
                 </li>
               </ul>
-              <Button className="w-full bg-amber-400 hover:bg-amber-500 text-black">
+              <Button className="w-full bg-yellow-400 hover:bg-yellow-500 text-black">
                 Get Started
               </Button>
             </Card>
@@ -288,7 +306,7 @@ export default function LandingPage() {
           </h2>
           <Button
             size="lg"
-            className="bg-amber-400 hover:bg-amber-500 text-black font-semibold text-lg px-10 py-7"
+            className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold text-lg px-10 py-7"
           >
             Create Your First Review Link
           </Button>

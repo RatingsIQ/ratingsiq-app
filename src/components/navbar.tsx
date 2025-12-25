@@ -14,13 +14,13 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="relative z-50 w-full bg-neutral-950">
+    <nav className="relative z-50 w-full bg-gray-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/logo-dark.svg" // Use your dark/transparent logo version
+              src="/logo-dark.svg"
               alt="RatingsIQ Logo"
               width={180}
               height={45}
@@ -35,7 +35,7 @@ export default function Navbar() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="text-slate-300 hover:text-white font-medium transition-colors"
+                className="text-slate-200 hover:text-white font-medium transition-colors"
               >
                 {item.label}
               </Link>
@@ -43,12 +43,12 @@ export default function Navbar() {
             <Button
               variant="ghost"
               asChild
-              className="text-slate-300 hover:text-white"
+              className="text-slate-300 hover:bg-teal-600 hover:text-white transition-colors"
             >
               <Link href="/login">Log In</Link>
             </Button>
             <Button
-              className="bg-amber-500 hover:bg-amber-600 text-black font-semibold"
+              className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold"
               asChild
             >
               <Link href="/login">Get Started</Link>
@@ -72,7 +72,7 @@ export default function Navbar() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className="text-lg font-medium text-slate-700 hover:text-amber-500 transition-colors"
+                    className="text-lg font-medium text-slate-700 hover:text-yellow-500 transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -81,7 +81,7 @@ export default function Navbar() {
                   <Link href="/login">Log In</Link>
                 </Button>
                 <Button
-                  className="w-full bg-amber-500 hover:bg-amber-600 text-black font-semibold"
+                  className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-semibold"
                   asChild
                 >
                   <Link href="/login">Get Started</Link>

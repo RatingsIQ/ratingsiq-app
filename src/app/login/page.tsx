@@ -1,4 +1,3 @@
-// src/app/(auth)/login/page.tsx
 "use client";
 
 import { useState } from "react";
@@ -36,13 +35,15 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
       <Card className="w-full max-w-md p-8">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-slate-900 mb-2">
-            Welcome to RatingsIQ
+            Sign up for RatingsIQ
           </h1>
-          <p className="text-slate-600">Enter your email to get started</p>
+          <p className="text-slate-600">
+            Enter your email and we’ll send you a secure sign-in link.
+          </p>
         </div>
 
         <form onSubmit={handleLogin} className="space-y-6">
@@ -57,19 +58,23 @@ export default function LoginPage() {
 
           <Button
             type="submit"
-            className="w-full bg-amber-400 hover:bg-amber-500 text-black"
+            className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-semibold"
             disabled={loading}
           >
             {loading ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Sending...
+                Sending link…
               </>
             ) : (
-              "Send Magic Link"
+              "Create Account"
             )}
           </Button>
         </form>
+
+        <p className="mt-4 text-xs text-slate-500 text-center">
+          No password required. We respect your privacy.
+        </p>
 
         {message && (
           <p
