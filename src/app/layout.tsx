@@ -28,7 +28,6 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className={`${sourceSans.variable} font-sans antialiased`}>
-        <Navbar />
         {children}
       </body>
     </html>
