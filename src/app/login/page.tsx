@@ -12,6 +12,7 @@ import Navbar from "@/components/navbar";
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
+  const [isReturning, setIsReturning] = useState(false);
   const [message, setMessage] = useState("");
   const router = useRouter();
 
@@ -42,10 +43,11 @@ export default function LoginPage() {
         <Card className="w-full max-w-md p-8">
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-slate-900 mb-2">
-              Sign up for RatingsIQ
+              Welcome to RatingsIQ
             </h1>
             <p className="text-slate-600">
-              Enter your email and we’ll send you a secure sign-in link.
+              Enter your email and we'll send you a secure link to sign in or
+              create your account.
             </p>
           </div>
 
@@ -70,7 +72,7 @@ export default function LoginPage() {
                   Sending link…
                 </>
               ) : (
-                "Create Account"
+                "Send My Sign-In Link"
               )}
             </Button>
           </form>
